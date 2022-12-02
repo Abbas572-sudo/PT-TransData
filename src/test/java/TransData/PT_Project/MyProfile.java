@@ -44,282 +44,44 @@ public class MyProfile extends BaseTest{
 	String newpassword = "98n058310A310@@@";
 
 
-	@Test(priority=1 , description ="Verify that user can update profile with valid first name ")
+	@Test(priority=1 , description ="Verify that user can change password ")
 	
 	
-	public void VerifythatuserCanupdatprofilewithvalidfirstname()  throws IOException, InterruptedException {
+	public void VerifythatusercanChangepassword()  throws IOException, InterruptedException {
 		launchPTNew();
-		
-//		Thread.sleep(20000);
-//		driver.findElement(By.cssSelector("div[class='signIn'] ul li a")).click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.cssSelector("#email")).sendKeys("nasiqzaheem@gmail.com");
-//		Thread.sleep(3000);
-//		driver.findElement(By.cssSelector("#password")).sendKeys("98058311");
-//		Thread.sleep(10000);
-//		driver.findElement(By.cssSelector("button[type='submit']")).click();
-//		Thread.sleep(20000);
-//        driver.findElement(By.cssSelector("img[alt='User']")).click();
-//        Thread.sleep(5000);
-//        driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("input[name='first_name']")).clear();
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("input[name='first_name']")).sendKeys("Muhammad");
-//       Thread.sleep(3000);
-//       driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//        String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
-//	     Assert.assertEquals(Alert , "Profile has been updated successfully");
-        driver.close();
+
+
+		Thread.sleep(20000);
+		driver.findElement(By.cssSelector("div[class='signIn'] ul li a")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.cssSelector("#email")).sendKeys("nasiqzaheem@gmail.com");
+		Thread.sleep(3000);
+		driver.findElement(By.cssSelector("#password")).sendKeys("98058312@");
+		Thread.sleep(10000);
+		driver.findElement(By.cssSelector("button[type='submit']")).click();
+		Thread.sleep(20000);
+        driver.findElement(By.cssSelector("img[alt='User']")).click();
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
+        Thread.sleep(3000);
+       driver.findElement(By.cssSelector("a[class$='btn-warning']")).click();
+	   Thread.sleep(3000);
+	   driver.findElement(By.cssSelector("input[name='current_password']")).sendKeys("98058312@");
+       Thread.sleep(3000);
+	   driver.findElement(By.cssSelector("input[name='password']")).sendKeys("98058311");
+	   Thread.sleep(3000);
+	   driver.findElement(By.cssSelector("input[name='password_confirmation']")).sendKeys("98058311");
+       Thread.sleep(3000);
+	   driver.findElement(By.cssSelector("button[class$='btn-sign-in']")).click();
+        Thread.sleep(3000);
+	   String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
+	     Assert.assertEquals(Alert , "Password changed successfully");
+
+		driver.close();
 		
 	}
 	
-//	@Test(priority=2 , description ="Verify that user can not update profile with invalid first name")
-//	
-//	
-//	public void Verifythatusercannotupdateprofilewithinvalidfirstname() throws IOException, InterruptedException {
-//		launchPTNew();
-//		Thread.sleep(20000);
-//        driver.findElement(By.cssSelector("img[alt='User']")).click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("input[name='first_name']")).clear();
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("input[name='first_name']")).sendKeys("1234");
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//        Thread.sleep(3000);
-//        String Alert =driver.findElement(By.cssSelector(".alert")).getText();
-//	     Assert.assertEquals(Alert , "Validation Error: The first name may only contain letters.");
-//        driver.close();
-//		
-//	}
-//	
-//	@Test(priority=3 , description ="Verify that user can update profile with valid last name")
-//	
-//	
-//	public void Verifythatusercanupdateprofilewithvalidlastname()  throws IOException, InterruptedException {
-//		launchPTNew();
-//		Thread.sleep(20000);
-//        driver.findElement(By.cssSelector("img[alt='User']")).click();
-//        Thread.sleep(5000);
-//        driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("input[name='last_name']")).clear();
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("input[name='last_name']")).sendKeys("Abbas");
-//       Thread.sleep(3000);
-//       driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//        String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
-//	     Assert.assertEquals(Alert , "Profile has been updated successfully");
-//        driver.close();
-////		
-//	}
-//	@Test(priority=4 , description ="Verify that user can not update profile with invalid last name")
-//	
-//	
-//	public void Verifythatusercannotupdateprofilewithinvalidlastname() throws IOException, InterruptedException {
-//		launchPTNew();
-//		Thread.sleep(20000);
-//        driver.findElement(By.cssSelector("img[alt='User']")).click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("input[name='last_name']")).clear();
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("input[name='last_name']")).sendKeys("1234");
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//        Thread.sleep(3000);
-//        String Alert =driver.findElement(By.cssSelector(".alert")).getText();
-//	     Assert.assertEquals(Alert , "Validation Error: The last name may only contain letters.");
-//        driver.close();
-//		
-//	}
-//	@Test(priority=5 , description ="Verify that user can update profile with valid phone number")
-//	
-//	
-//	public void Verifythatusercanupdateprofilewithvalidphonenumber() throws IOException, InterruptedException {
-//		launchPTNew();
-//		Thread.sleep(20000);
-//        driver.findElement(By.cssSelector("img[alt='User']")).click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//        Thread.sleep(3000);
-//        String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
-//	     Assert.assertEquals(Alert , "Profile has been updated successfully");
-//        driver.close();
-//		
-//	}
-//@Test(priority=6 , description ="Verify that user can not update profile with invalid phone number")
-//	
-//	
-//	public void Verifythatusercannotupdateprofilewithinvalidphonenumber() throws IOException, InterruptedException {
-//		launchPTNew();
-//		Thread.sleep(20000);
-//        driver.findElement(By.cssSelector("img[alt='User']")).click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//
-//       
-//        Thread.sleep(3000);
-//        driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//        Thread.sleep(3000);
-//        String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
-//	     Assert.assertEquals(Alert , "Profile has been updated successfully");
-//        driver.close();
-//		
-//	}
-//@Test(priority=7 , description ="Verify that user can update profile by selecting insurance from drop down list")
-//
-//
-//public void Verifythatusercanupdateprofilebyselectinginsurancefromdropdownlist () throws IOException, InterruptedException {
-//	launchPTNew();
-//	Thread.sleep(20000);
-//    driver.findElement(By.cssSelector("img[alt='User']")).click();
-//    Thread.sleep(3000);
-//    driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//    Thread.sleep(3000);
-//    Select insurance = new Select(driver.findElement(By.cssSelector("select[name='insurance']")));
-//    insurance.selectByVisibleText("UHC");
-//    Thread.sleep(3000);
-//    driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//    
-//    Thread.sleep(3000);
-//    String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
-//    Assert.assertEquals(Alert , "Profile has been updated successfully");
-//    driver.close();
-//	
-//}
-//@Test(priority=8 , description ="Verify that user can update profile by selecting maritial status")
-//
-//
-//public void Verifythatusercanupdateprofilebyselectingmaritialstatus () throws IOException, InterruptedException {
-//	launchPTNew();
-//	Thread.sleep(20000);
-//    driver.findElement(By.cssSelector("img[alt='User']")).click();
-//    Thread.sleep(3000);
-//    driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//    Thread.sleep(3000);
-//    Select insurance = new Select(driver.findElement(By.cssSelector("select[name='martial_status']")));
-//    insurance.selectByVisibleText("Married");
-//    Thread.sleep(3000);
-//    driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//    
-//    Thread.sleep(3000);
-//    String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
-//    Assert.assertEquals(Alert , "Profile has been updated successfully");
-//    driver.close();
-//	
-//}
-//@Test(priority=9 , description ="Verify that user can update profile by un select maritial status")
-//
-//
-//public void Verifythatusercanupdateprofilebyunselectmaritialstatus () throws IOException, InterruptedException {
-//	launchPTNew();
-//	Thread.sleep(20000);
-//    driver.findElement(By.cssSelector("img[alt='User']")).click();
-//    Thread.sleep(3000);
-//    driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//    Thread.sleep(3000);
-//    Select insurance = new Select(driver.findElement(By.cssSelector("select[name='martial_status']")));
-//    insurance.selectByVisibleText("Please Marital Status");
-//    Thread.sleep(3000);
-//    driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//    
-//    Thread.sleep(3000);
-//    String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
-//    Assert.assertEquals(Alert , "Profile has been updated successfully");
-//    driver.close();
-//	
-//}
-//@Test(priority=10 , description ="Verify that user can update profile by selecting gender")
-//
-//public void Verifythatusercanupdateprofilebyselectinggender () throws IOException, InterruptedException {
-//	launchPTNew();
-//	Thread.sleep(20000);
-//    driver.findElement(By.cssSelector("img[alt='User']")).click();
-//    Thread.sleep(3000);
-//    driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//    Thread.sleep(3000);
-//   driver.findElement(By.cssSelector("#male")).click();
-//    Thread.sleep(3000);
-//    driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//    
-//    Thread.sleep(3000);
-//    String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
-//    Assert.assertEquals(Alert , "Profile has been updated successfully");
-//    driver.close();
-//	
-//}
-//
-//@Test(priority=11 , description ="Verify that user can update date of birth ")
-//
-//
-//public void Verifythatusercanupdatedateofbirth  () throws IOException, InterruptedException {
-//	launchPTNew();
-//	Thread.sleep(20000);
-//    driver.findElement(By.cssSelector("img[alt='User']")).click();
-//    Thread.sleep(3000);
-//    driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//    Thread.sleep(3000);
-//   driver.findElement(By.cssSelector("input[name='date_of_birth']")).sendKeys("10/04/1995");
-//    Thread.sleep(3000);
-//    driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//    
-//    Thread.sleep(3000);
-//    String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
-//    Assert.assertEquals(Alert , "Profile has been updated successfully");
-//    driver.close();
-//	
-//}
-//
-//
-//	@Test(priority=12 , description ="Verify that user can upload profile pic")
-//	
-//	
-//	public void Verifythatusercanuploadprofilepic  () throws IOException, InterruptedException, AWTException {
-//
-//		launchPTNew();
-//		
-//		Thread.sleep(20000);
-//	    driver.findElement(By.cssSelector("img[alt='User']")).click();
-//	    Thread.sleep(3000);
-//	    driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//	   Thread.sleep(3000);
-//	   driver.findElement(By.xpath("//input[@id='upfile']")).sendKeys("/Users/muhammadabbas/Desktop/Abbas.jpeg");
-//	   Thread.sleep(3000);
-//	   
-//
-//	    String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
-//	    Assert.assertEquals(Alert , "Profile has been updated successfully");
-//	    driver.close();
-//		
-//	}
-//	@Test(priority=13 , description ="Verify that user should not able to update profile with out date of birth ")
-//	
-//	
-//	public void Verifythatusershouldnotabletoupdateprofilewithoutdateofbirth () throws IOException, InterruptedException, AWTException {
-//		launchPTNew();
-//		Thread.sleep(20000);
-//	    driver.findElement(By.cssSelector("img[alt='User']")).click();
-//	    Thread.sleep(3000);
-//	    driver.findElement(By.xpath("//a[normalize-space()='My Profile']")).click();
-//	    Thread.sleep(3000);
-//	    driver.findElement(By.cssSelector("input[name='date_of_birth']")).clear();
-//	    Thread.sleep(3000);
-//	    driver.findElement(By.cssSelector("button[class='btn btn-sign-in']")).click();
-//	    
-//	    Thread.sleep(3000);
-//	    String Alert =driver.findElement(By.cssSelector(".toast.toast-success")).getText();
-//	    Assert.assertEquals(Alert , "Profile has been updated successfully");
-//	    driver.close();
-//		
-//	}
-//	
+
 
 
 }

@@ -8,9 +8,9 @@
 
 
 
-    <test thread-count="5" name="MyProfile">
+    <test thread-count="5" name="MyProfile_Change_Password">
     <classes>
-      <class name="TransData.PT_Project.MyProfile"/>
+      <class name="TransData.PT_Project.MyProfile_Change_Password"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

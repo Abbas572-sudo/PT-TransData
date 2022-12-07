@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.google.gson.JsonObject;
-
+import org.openqa.selenium.io.FileHandler;
 
 
 public class BaseTest {
@@ -83,9 +83,8 @@ public class BaseTest {
 		FileUtils.copyFile(source, file);
 		return System.getProperty("user.dir")+"//reports//"+testCaseName+".png";
 	}
-	
-	
-	
+
+
 	public void launchPT() throws IOException {
 		driver = intializeDriver();
 		driver.manage().window().maximize();

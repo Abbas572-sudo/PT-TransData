@@ -11,7 +11,7 @@ public static ExtentReports getReportObject()
 String path = System.getProperty("user.dir")+"//reports//index.html";
 ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 
-reporter.config().setReportName("PT MyProfile-Change Password Test  Report");
+reporter.config().setReportName("PT MyProfile_Change_Password Test  Report");
 reporter.config().setDocumentTitle("PT Test Results");
 ExtentReports extent =new ExtentReports();
 extent.attachReporter(reporter);

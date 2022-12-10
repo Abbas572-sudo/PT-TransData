@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.google.gson.JsonObject;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
 
 
@@ -26,7 +27,8 @@ public class BaseTest {
 		
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//src//main//java//Resources//objectModle//objectModleResources.properties");
 		pro.load(fis);
-	    String browserName = pro.getProperty("browser");
+		String browserName = System.getProperty("browser") !=null ? System.getProperty("browser") :pro.getProperty("browser");
+	    /*String browserName = pro.getProperty("browser");*/
 	    
 	    
 	    if(browserName.equalsIgnoreCase("chrome")) {
@@ -35,11 +37,16 @@ public class BaseTest {
 	    	
 
 	    	driver = new ChromeDriver();
-	    }
-	    
-	    return driver;
-		
-		
+	    } else if (browserName.equalsIgnoreCase("firefox")) {
+
+			System.setProperty("webdriver.gecko.driver", "/Users/muhammadabbas/Downloads/geckodriver");
+
+			driver = new FirefoxDriver();
+		}
+
+		return driver;
+
+
 		
 		
 		
@@ -52,7 +59,9 @@ public class BaseTest {
 		
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//src//main//java//Resources//objectModle//objectModleResources.properties");
 		pro.load(fis);
-	    String browserName = pro.getProperty("browser");
+
+		String browserName = System.getProperty("browser") !=null ? System.getProperty("browser") :pro.getProperty("browser");
+		/*String browserName = pro.getProperty("browser");*/
 	    
 	    
 	    if(browserName.equalsIgnoreCase("chrome")) {
@@ -66,6 +75,12 @@ public class BaseTest {
 	    
 		      
 	    }
+		else if (browserName.equalsIgnoreCase("firefox")) {
+
+			System.setProperty("webdriver.gecko.driver", "/Users/muhammadabbas/Downloads/geckodriver");
+
+			driver = new FirefoxDriver();
+		}
 	    
 	    return driver;
 		
